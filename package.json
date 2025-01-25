@@ -1,0 +1,38 @@
+{
+  "name": "proxy-checker-lite",
+  "version": "1.0.0",
+  "description": "A utility for testing the validity of HTTP and SOCKS proxies with Discord integration.",
+  "main": "src/index.js",
+  "type": "module",
+  "keywords": [
+    "proxy",
+    "checker",
+    "http-proxy",
+    "socks-proxy",
+    "discord"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cssdao/proxy-checker-lite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cssdao/proxy-checker-lite/issues"
+  },
+  "homepage": "https://github.com/cssdao/proxy-checker-lite#readme",
+  "dependencies": {
+    "https-proxy-agent": "^7.0.6",
+    "node-fetch": "2.0.0",
+    "socks-proxy-agent": "^8.0.5"
+  },
+  "devDependencies": {
+    "@types/form-data": "^2.5.2",
+    "@types/node": "^20.12.12",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
