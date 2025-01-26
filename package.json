@@ -1,8 +1,8 @@
 {
   "name": "proxy-checker-lite",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "description": "A utility for testing the validity of HTTP and SOCKS proxies with Discord integration.",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "type": "module",
   "keywords": [
     "proxy",
@@ -11,9 +11,10 @@
     "socks-proxy",
     "discord"
   ],
-  "author": "Your Name",
+  "author": "",
   "license": "MIT",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,10 +28,10 @@
   "dependencies": {
     "https-proxy-agent": "^7.0.6",
     "node-fetch": "2.0.0",
-    "socks-proxy-agent": "^8.0.5"
+    "socks-proxy-agent": "^8.0.5",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "@types/form-data": "^2.5.2",
     "@types/node": "^20.12.12",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"

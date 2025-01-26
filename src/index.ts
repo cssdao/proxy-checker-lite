@@ -1,6 +1,9 @@
 import fetch from 'node-fetch';
 import { SocksProxyAgent } from 'socks-proxy-agent';
 import { HttpsProxyAgent } from 'https-proxy-agent';
+import loadFromXLS from './loadXLSFile';
+
+export default loadFromXLS;
 
 /**
  * 检查单个代理的有效性
@@ -8,7 +11,10 @@ import { HttpsProxyAgent } from 'https-proxy-agent';
  * @param {string} token Discord 的 API Token
  * @returns {Promise<boolean>} 返回代理是否有效
  */
-export async function checkProxyAndFetch(proxyUrl, token) {
+export async function checkProxyAndFetch(
+  proxyUrl: string,
+  token: string
+): Promise<boolean> {
   try {
     let agent;
 
@@ -63,7 +69,7 @@ export async function checkProxyAndFetch(proxyUrl, token) {
     );
 
     return true; // 所有检查通过
-  } catch (error) {
+  } catch (error: any) {
     console.error(`❌ 请求失败：${proxyUrl}，错误信息：${error.message}`);
     return false;
   }
@@ -74,7 +80,9 @@ export async function checkProxyAndFetch(proxyUrl, token) {
  * @param {Array<{proxy: string, token: string}>} proxyData 代理数组
  * @returns {Promise<boolean>} 如果所有代理都有效，返回 true，否则返回 false
  */
-export async function checkProxiesAndFetch(proxyData) {
+export async function checkProxiesAndFetch(
+  proxyData: Array<{ proxy: string; token: string }>
+): Promise<boolean> {
   let allPassed = true;
 
   for (const [index, { proxy, token }] of proxyData.entries()) {
